@@ -58,6 +58,9 @@ void Game::ProcessInput()
 }
 void Game::UpdateGame()
 {
+	// TODO: Implement update
+ 
+
 }
 
 void Game::GenerateOutput()
