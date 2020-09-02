@@ -1,6 +1,7 @@
 #pragma once
 #define SDL_MAIN_HANDLED
 #include "SDL2/SDL.h"
+#include "Vector2.h"
 
 class Game
 {
@@ -8,11 +9,8 @@ class Game
 public:
 
 	Game();
-	// Initialize the game
 	bool Initialize();
-	// Runs the game loop until the game is over
 	void RunLoop();
-	// Shutdown the game
 	void Shutdown();
 
 private:
@@ -22,11 +20,19 @@ private:
 	void UpdateGame();
 	void GenerateOutput();
 
-	// Window created by SDL
 	SDL_Window* mWindow;
+	SDL_Renderer* mRenderer;
+
 
 	// Game should continue to run
 	bool mIsRunning;
 
+
+	Vector2 mPaddlePos;
+	Vector2 mBallPos;
+	Vector2 mBallVel;
+	int mPaddleDir = 0;
+	
+	Uint32 mTicksCount;
 };
 
